@@ -119,6 +119,7 @@ struct xr_surfmap {
 };
 
 TYPEDEF_STD_VECTOR_PTR(xr_surfmap)
+TYPEDEF_STD_VECTOR(fvector3)
 
 struct lw_options {
 	uint32_t	unk1;
@@ -182,6 +183,9 @@ public:
 	xr_vmap_vec&			vmaps();
 	const xr_vmap_vec&		vmaps() const;
 
+	fvector3_vec&			vnorm();
+	const fvector3_vec&		vnorm() const;
+
 	void				calculate_bbox();
 
 protected:
@@ -197,6 +201,7 @@ protected:
 	lw_vmref_vec		m_vmrefs;	// EMESH_CHUNK_VMREFS
 	xr_surfmap_vec		m_surfmaps;	// EMESH_CHUNK_SFACE
 	xr_vmap_vec		m_vmaps;	// EMESH_CHUNK_VMAPS
+	fvector3_vec	m_vertex_normals;
 };
 
 TYPEDEF_STD_VECTOR_PTR(xr_mesh)
@@ -247,7 +252,8 @@ inline xr_surfmap_vec& xr_mesh::surfmaps() { return m_surfmaps; }
 inline const xr_surfmap_vec& xr_mesh::surfmaps() const { return m_surfmaps; }
 inline xr_vmap_vec& xr_mesh::vmaps() { return m_vmaps; }
 inline const xr_vmap_vec& xr_mesh::vmaps() const { return m_vmaps; }
-
+inline fvector3_vec& xr_mesh::vnorm() { return m_vertex_normals; }
+inline const fvector3_vec& xr_mesh::vnorm() const { return m_vertex_normals; }
 } // end of namespace xray_re
 
 #endif

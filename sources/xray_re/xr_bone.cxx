@@ -41,7 +41,7 @@ void xr_bone::load_1(xr_reader& r)
 	if (version == BONE_VERSION_1)
 		std::swap(m_bind_offset.x, m_bind_offset.y);
 
-	load_data(r);
+	//load_data(r);
 }
 
 void xr_bone::load_0(xr_reader& r)

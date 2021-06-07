@@ -8,6 +8,7 @@
 
 #define NOMINMAX
 #include <basetsd.h>
+#include <memory>
 #if _MSC_VER >= 1900
 #  include <stdint.h>
 #endif
